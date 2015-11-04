@@ -40,4 +40,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Portable\Portable.csproj">
+      <Project>{66C0F679-61B9-4907-B583-AA5445E42642}</Project>
+      <Name>Portable</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
