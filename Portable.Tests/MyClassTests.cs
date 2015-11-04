@@ -7,9 +7,13 @@ namespace Portable.Tests
 	public class MyClassTests
 	{
 		[Test ()]
-		public void TestCase ()
+		public void TestCase()
 		{
+			var myClass = new MyClass();
+			
+            var result = myClass.Sum(2, 2);
+
+            Assert.AreEqual(4, result);
 		}
 	}
 }
-
