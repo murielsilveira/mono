@@ -4,7 +4,7 @@ using System;
 namespace Portable.Tests
 {
 	[TestFixture ()]
-	public class Test
+	public class MyClassTests
 	{
 		[Test ()]
 		public void TestCase ()
