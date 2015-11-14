@@ -1,0 +1,16 @@
+﻿using NUnit.Framework;
+using System;
+
+namespace Library.Tests
+{
+    [TestFixture()]
+    public class Test
+    {
+        [Test()]
+        public void TestCase()
+        {
+            new Database().Conectar();
+        }
+    }
+}
+
