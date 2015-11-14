@@ -6,3 +6,4 @@ install:
 script:
   - xbuild /p:Configuration=Release Mono.sln
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Portable.Tests/bin/Release/Portable.Tests.dll
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Library.Tests/bin/Release/Library.Tests.dll
