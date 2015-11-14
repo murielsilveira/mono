@@ -12,7 +12,8 @@ namespace Library
 
         public void Conectar()
         {
-            using (var conn = new SqliteConnection("URI=file:/home/muriel/dev/csharp/Mono/muriel.db3"))
+            string path = "URI=file:" + AppDomain.CurrentDomain.BaseDirectory + "muriel.db3";
+            using (var conn = new SqliteConnection(path))
             {
                 conn.Open();
                 conn.Clone();
