@@ -1,5 +1,5 @@
 ﻿using System;
-using Mono.Data.Sqlite;
+using SQLite;
 
 namespace Library
 {
@@ -12,12 +12,8 @@ namespace Library
 
         public void Conectar()
         {
-            string path = "URI=file:" + AppDomain.CurrentDomain.BaseDirectory + "muriel.db3";
-            using (var conn = new SqliteConnection(path))
-            {
-                conn.Open();
-                conn.Clone();
-            }
+            string path = AppDomain.CurrentDomain.BaseDirectory + "muriel.db3";
+            SQLiteConnection conexao = new SQLiteConnection(path);
         }
     }
 }
