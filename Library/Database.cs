@@ -64,7 +64,7 @@ namespace Library
             }
         }
 
-        public int SaveItem<T>(T item) where T : Models.IModel, new()
+        public int SaveItem<T>(T item) where T : class, Models.IModel, new()
         {
             lock (locker)
             {
@@ -85,7 +85,7 @@ namespace Library
             }
         }
 
-        public T GetItem<T>(int id) where T : Models.IModel, new()
+        public T GetItem<T>(int id) where T : class, Models.IModel, new()
         {
             lock (locker)
             {
