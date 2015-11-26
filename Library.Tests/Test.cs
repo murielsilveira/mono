@@ -7,10 +7,9 @@ namespace Library.Tests
     public class Test
     {
         [Test()]
-        public void TestCase()
+        public void ConectarNoSQLite()
         {
             new Database().Conectar();
         }
     }
 }
-
