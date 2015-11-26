@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using Library.Models;
 
 namespace Library.Tests
 {
@@ -7,9 +8,19 @@ namespace Library.Tests
     public class Test
     {
         [Test()]
-        public void ConectarNoSQLite()
+        public void TestSQLiteDatabase()
         {
-            new Database().Conectar();
+            var database = new Database();
+            database.DropTables();
+            database.CreateTables();
+
+            var id = database.SaveItem(new Client(){
+                Name = "John Doe"
+            });
+            var entry = database.GetItem<Client>(id);
+
+            Assert.AreEqual(id, entry.ID);
+            Assert.AreEqual("John Doe", entry.Name);
         }
     }
 }
