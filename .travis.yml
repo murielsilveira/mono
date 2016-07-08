@@ -1,8 +1,13 @@
 language: csharp
 solution: Mono.sln
 install:
+  - git clone git@github.com:gaillard/SharpCover.git
+  - xbuild SharpCover/Gaillard.SharpCover/Program.csproj
   - nuget restore Mono.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release Mono.sln
+  - mono ./SharpCover/Gaillard.SharpCover/bin/Debug/SharpCover.exe instrument ./coverageConfig.json
   - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Portable.Tests/bin/Release/Portable.Tests.dll
+  - mono ./SharpCover/Gaillard.SharpCover/bin/Debug/SharpCover.exe check
+  - bash <(curl -s https://codecov.io/bash)
