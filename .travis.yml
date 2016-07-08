@@ -1,7 +1,7 @@
 language: csharp
 solution: Mono.sln
 install:
-  - git clone git@github.com:gaillard/SharpCover.git
+  - git clone https://github.com/gaillard/SharpCover.git
   - xbuild SharpCover/Gaillard.SharpCover/Program.csproj
   - nuget restore Mono.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
